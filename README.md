@@ -1,3 +1,4 @@
 # Honeypot
 
-*El objetivo:* Configurar un "señuelo" (un servidor vulnerable) en AWS, enviar sus registros a un SIEM y crear una alerta cuando alguien intente atacarlo.
+# Objective: 
+Set up a “decoy” (a vulnerable server) on AWS, send its logs to a SIEM, and create an alert when someone attempts to attack it.
