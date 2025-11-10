@@ -5,11 +5,16 @@ Set up a “decoy” (a vulnerable server) on AWS, send its logs to a SIEM, and 
 
 # AWS TOOLS
 •	*EC2*: To launch a VM.
+
 •	*VPC (Virtual Private Cloud)*: To create your network. 
+
 • *Security Groups*: To deliberately open “insecure” ports (for example, SSH/RDP to the world 0.0.0.0/0).
+
 # SIEM TOOLS
 • *WAZUH*: Excellent open-source option. This "agent" of Wazuh was install on the honeypot and the "manager" (what is SIEM) recieved the logs
+
 • *Splunk Free*: The industry standard. It has a daily intake limit (500MB) that is perfect for a laboratory. 
+
 • *Elastic Stack (ELK)*: Very powerful and popular
 
 *Phases:*
