@@ -25,5 +25,8 @@ __***Phases:***__
 
 •	**Phase 3**: Configure the Honeypot and Agent 
 
-•	Phase 4: Detect and Visualize the Attack
+•	**Phase 4**: Detect and Visualize the Attack
+
+# PHASE 1 : Prepare the Infrastructure on GCP
+We will use the GCP free tier, which includes one -e2-micro- instance per month. For our lab of two VMs, the cost will be like a few cents per hour
 
