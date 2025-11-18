@@ -37,7 +37,10 @@ We will use the GCP free tier, which includes one -e2-micro- instance per month.
 
    1.3 Create VM 1: SIEM Server
          1.3.1 **Name:** siem-server-wazuh
+   
          1.3.2 **Region:** us-central1 (or one near you)
+   
          1.3.3 **Zone:** us-central1-a
+   
          1.3.4 **Machine type:** e2-medium (Wazuh need more like RAM than micro. e2-micro may                                   be failed)
 
