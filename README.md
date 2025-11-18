@@ -1,4 +1,4 @@
-# Honeypot
+# Honeypot Cowrie + SIEM Wazuh en GCP
 
 # Objective:
 Set up a “decoy” (a vulnerable server) on AWS, send its logs to a SIEM, and create an alert when someone attempts to attack it.
@@ -34,7 +34,7 @@ We will use the GCP free tier, which includes one -e2-micro- instance per month.
    1.1 Go to GCP Console and create a new project ("Cybersecurity Project" in this case).
    1.2 Go to Compute Engine > VM instances.
    1.3 Create VM 1: SIEM Server
-       * Name: siem-server-wazuh
+       * Name: ´siem-server-wazuh´
        * Region: us-central1 (or one near you)
        * Zone: us-central1-a
        * Machine type: e2-medium (Wazuh need more like RAM than micro. e2-micro may be failed)
