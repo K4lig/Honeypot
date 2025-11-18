@@ -64,10 +64,12 @@ __*1. Create instances (VMs)*__
          1.4.6 Firewall: Do not mark anything.
 
 __*2. Configure SSH connection (Keys)*__
+
 GCP manages SSH keys slightly differently than AWS. The easiest way is to use the gcloud tool or connect from browser.
    → To connect to yours VMs, simply go to the list of the instances of VM and click on the button "SSH" next to each one. This opened a terminal on your browser. It's so easy!
 
 __*3. Configure Firewall* (Most important part!)__
+
 Here we define who can talk with whom. Go to **VPC Network** > **Firewall**. We going to create 4 rules:
 
    3.1 Rule 1: 'allow-admin-ssh' (So that YOU can manage the VMs)
