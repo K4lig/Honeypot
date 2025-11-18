@@ -49,7 +49,7 @@ __*1. Create instances (VMs)*__
 
          1.3.6 Firewall: Do not mark “Allow HTTP traffic” or “HTTPS”. We will do it manually.
 
-    1.4 Create VM 2: The Honeypot
+   1.4 Create VM 2: The Honeypot
 
          1.4.1 Name: honeypot-server-wazuh.
 
