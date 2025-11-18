@@ -36,11 +36,29 @@ We will use the GCP free tier, which includes one -e2-micro- instance per month.
    1.2 Go to Compute Engine > VM instances.
 
    1.3 Create VM 1: SIEM Server
-         1.3.1 **Name:** siem-server-wazuh
    
-         1.3.2 **Region:** us-central1 (or one near you)
+         1.3.1 **Name:** siem-server-wazuh.
    
-         1.3.3 **Zone:** us-central1-a
+         1.3.2 **Region:** us-central1 (or one near you).
    
-         1.3.4 **Machine type:** e2-medium (Wazuh need more like RAM than micro. e2-micro maybe failed)
+         1.3.3 **Zone:** us-central1-a.
+   
+         1.3.4 **Machine type:** e2-medium (Wazuh need more like RAM than micro. e2-micro maybe failed).
 
+         1.3.5 **Boot disk:** Switch to Ubuntu 22.04 LTS (Leave 10 GB on disk).
+
+         1.3.6 **Firewall:** Do not mark “Allow HTTP traffic” or “HTTPS”. We will do it manually.
+
+    1.4 Create VM 2: The Honeypot
+
+         1.4.1 **Name:** 'honeypot-server-wazuh'.
+
+         1.4.2 **Region:** us-central1 (the same like siem)
+
+         1.4.3 **Zone:** us-central1-a
+
+         1.4.4 **Machine type:** e2-micro (the honeypot is very lightweight, so we save money here)
+
+         1.4.5 **Network tags:** Important! Add a tag call @honeypot@. This will allow us to applied specific firewall rules.
+
+         1.4.6 **Firewall:** __Do not mark anything.__
