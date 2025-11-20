@@ -1,9 +1,9 @@
 # Honeypot Cowrie + SIEM Wazuh en GCP
 
 # Objective:
-Set up a “decoy” (a vulnerable server) on AWS, send its logs to a SIEM, and create an alert when someone attempts to attack it.
+Set up a “decoy” (a vulnerable server) on GCP, send its logs to a SIEM, and create an alert when someone attempts to attack it.
 
-# AWS TOOLS
+# GOOGLE CLOUD PLATFORM TOOLS
 •	**EC2**: To launch a VM.
 
 •	**VPC (Virtual Private Cloud)**: To create your network. 
