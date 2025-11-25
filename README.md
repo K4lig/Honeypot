@@ -49,16 +49,24 @@ This project demonstrates practical skills in **Cloud Security**, **Log Analysis
 ### Step 1: Deploy the SIEM (Docker)
 bash
 ```git clone [https://github.com/wazuh/wazuh-docker.git](https://github.com/wazuh/wazuh-docker.git) -b v4.9.0```
+
 ```cd wazuh-docker/single-node```
+
 ```docker compose -f generate-indexer-certs.yml run --rm generator```
+
 ```docker compose up -d```
 
 ### Step 2: Configure the Honeypot (Cowrie)
 
 # Clone and install Cowrie
-git clone [http://github.com/cowrie/cowrie](http://github.com/cowrie/cowrie)
-cd cowrie
-pip install -r requirements.txt
+```git clone [http://github.com/cowrie/cowrie](http://github.com/cowrie/cowrie)```
+
+```cd cowrie```
+
+```pip install -r requirements.txt```
+
 # Configure listening port to 2222 in cowrie.cfg
-bin/cowrie start
-Step 3: Install Wazuh Agent & Connect
+
+```bin/cowrie start```
+
+### Step 3: Install Wazuh Agent & Connect
