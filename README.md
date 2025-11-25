@@ -44,34 +44,43 @@ This project demonstrates practical skills in **Cloud Security**, **Log Analysis
 
 ---
 
+# Deployment Guide: Cyber Intelligence Infrastructure (Honeypot + SIEM)
+
+This guide details the step-by-step construction of a threat detection environment in the cloud using Google Cloud Platform (GCP).
+
+**Architecture:**
+1.  **SIEM Node:** Wazuh (v4.9) deployed via Docker.
+2.  **Honeypot Node:** Cowrie (SSH/Telnet Honeypot) on Ubuntu Server.
+
+---
+
+## 🧱 PHASE 1: Infrastructure Preparation (GCP)
+
+### 1.1 Configure Firewall (VPC Network)
+Before creating the VMs, open the necessary ports.
+* **Navigate to:** VPC network > Firewall > Create firewall rule.
+* **Name:** `allow-security-lab`
+* **Targets:** `All instances in the network`
+* **Source IPv4 ranges:** `0.0.0.0/0`
+* **Protocols and ports:**
+    * `tcp:2222` (For attackers to access the Honeypot).
+    * `tcp:443` (To access the Wazuh Dashboard).
+    * `tcp:1514-1515` (Internal Agent-Server communication).
+
+### 1.2 Create Virtual Machine 1 (SIEM Server)
+* **Name:** `server-siem-wazuh`
+* **Zone:** `us-central1-a`
+* **Machine type:** `e2-custom` (2 vCPU, **6 GB RAM**). *Critical for Docker performance*.
+* **Boot disk:** Ubuntu 22.04 LTS - **Size: 20 GB**.
+* **Firewall:** Check "Allow HTTP/HTTPS traffic".
+
+### 1.3 Create Virtual Machine 2 (Honeypot)
+* **Name:** `server-honeypot-cowrie`
+* **Zone:** `us-central1-a`
+* **Machine type:** `e2-micro` (Cost-effective).
+* **Boot disk:** Ubuntu 22.04 LTS - Size: 10 GB.
+* **Network tags:** Type `honeypot`.
+
+---
 ## 🚀 How to Replicate
 
-# Step 1: Deploy the SIEM (Docker)
-```bash
-git clone [https://github.com/wazuh/wazuh-docker.git](https://github.com/wazuh/wazuh-docker.git) -b v4.9.0
-cd wazuh-docker/single-node
-docker compose -f generate-indexer-certs.yml run --rm generator
-docker compose up -d
-```
-
-# Step 2: Configure the Honeypot (Cowrie)
-```bash
-# Clone and install Cowrie
-git clone [http://github.com/cowrie/cowrie](http://github.com/cowrie/cowrie)
-cd cowrie
-pip install -r requirements.txt
-# Configure listening port to 2222 in cowrie.cfg
-bin/cowrie start
-```
-
-# Step 3: Install Wazuh Agent & Connect
-Install the Wazuh Agent on the Honeypot VM and configure ossec.conf to read Cowrie's JSON logs. Then, add the custom detection rules to the Wazuh Manager:
-```xml
-<group name="cowrie,">
-  <rule id="100010" level="3">
-    <decoded_as>json</decoded_as>
-    <field name="eventid">^cowrie\.</field>
-    <description>Cowrie: Evento registrado</description>
-  </rule>
-</group>
-```
