@@ -1,3 +1,4 @@
+
 # Cloud-Based Threat Intelligence System: SSH Honeypot & SIEM Analysis
 
 ![Project Banner](https://img.shields.io/badge/Status-Completed-success) ![Tech](https://img.shields.io/badge/Tech-Wazuh%20%7C%20Docker%20%7C%20Cowrie%20%7C%20GCP-blue)
@@ -118,3 +119,5 @@ docker compose up -d
 * **URL:** https://<SIEM_PUBLIC_IP>
 * **User:** Admin
 * **Password:** SecretPassword
+
+## 🍯 PHASE 3: Honeypot Deployment (Cowrie)
