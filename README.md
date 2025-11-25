@@ -43,8 +43,8 @@ This project demonstrates practical skills in **Cloud Security**, **Log Analysis
 ![Commands Screenshot]([INSERT_LINK_TO_YOUR_COMMANDS_IMAGE_HERE])
 
 ---
-
-# Deployment Guide: Cyber Intelligence Infrastructure (Honeypot + SIEM)
+# 🚀 How to Replicate
+## Deployment Guide: Cyber Intelligence Infrastructure (Honeypot + SIEM)
 
 This guide details the step-by-step construction of a threat detection environment in the cloud using Google Cloud Platform (GCP).
 
@@ -82,5 +82,3 @@ Before creating the VMs, open the necessary ports.
 * **Network tags:** Type `honeypot`.
 
 ---
-## 🚀 How to Replicate
-
