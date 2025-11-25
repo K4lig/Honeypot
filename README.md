@@ -47,7 +47,7 @@ This project demonstrates practical skills in **Cloud Security**, **Log Analysis
 ## 🚀 How to Replicate
 
 ### Step 1: Deploy the SIEM (Docker)
-```bash```
+bash
 ```git clone [https://github.com/wazuh/wazuh-docker.git](https://github.com/wazuh/wazuh-docker.git) -b v4.9.0```
 ```cd wazuh-docker/single-node```
 ```docker compose -f generate-indexer-certs.yml run --rm generator```
