@@ -100,3 +100,21 @@ sudo sh get-docker.sh
 sudo usermod -aG docker $USER
 newgrp docker
 ```
+
+### 2.2 Deploy Wazuh (Single Node)
+```bash
+# Clone official repository (Version 4.9.0)
+git clone [https://github.com/wazuh/wazuh-docker.git](https://github.com/wazuh/wazuh-docker.git) -b v4.9.0
+cd wazuh-docker/single-node
+
+# Generate security certificates
+docker compose -f generate-indexer-certs.yml run --rm generator
+
+# Start containers
+docker compose up -d
+```
+
+### 2.3 Dashboard Access
+* **URL:** https://<SIEM_PUBLIC_IP>
+* **User:** Admin
+* **Password:** SecretPassword
