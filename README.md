@@ -82,3 +82,21 @@ Before creating the VMs, open the necessary ports.
 * **Network tags:** Type `honeypot`.
 
 ---
+
+## 🧠 PHASE 2: SIEM Deployment (Wazuh with Docker)
+
+SSH into `server-siem-wazuh`.
+
+### 2.1 Install Docker Engine
+```bash
+# Update system
+sudo apt-get update && sudo apt-get upgrade -y
+
+# Official installation script
+curl -fsSL [https://get.docker.com](https://get.docker.com) -o get-docker.sh
+sudo sh get-docker.sh
+
+# Grant permissions to the current user
+sudo usermod -aG docker $USER
+newgrp docker
+```
