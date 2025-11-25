@@ -130,3 +130,24 @@ sudo apt-get install -y git python3-venv python3-pip libssl-dev libffi-dev build
 sudo adduser --disabled-password cowrie
 # (Press Enter to accept default values)
 ```
+
+### 3.2 Install Cowrie (Virtual Environment)
+```bash
+# Switch to cowrie user
+sudo su - cowrie
+
+# Download code
+git clone [http://github.com/cowrie/cowrie](http://github.com/cowrie/cowrie)
+cd cowrie
+
+# Create virtual environment
+python3 -m venv cowrie-env
+source cowrie-env/bin/activate
+
+# Install dependencies
+pip install --upgrade pip setuptools wheel
+pip install --upgrade -r requirements.txt
+
+# Install Cowrie in editable mode (Fixes path errors)
+pip install -e .
+```
