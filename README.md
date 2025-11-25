@@ -69,3 +69,13 @@ This project demonstrates practical skills in **Cloud Security**, **Log Analysis
 ```bin/cowrie start```
 
 # Step 3: Install Wazuh Agent & Connect
+Install the Wazuh Agent on the Honeypot VM and configure ossec.conf to read Cowrie's JSON logs. Then, add the custom detection rules to the Wazuh Manager:
+```xml
+<group name="cowrie,">
+  <rule id="100010" level="3">
+    <decoded_as>json</decoded_as>
+    <field name="eventid">^cowrie\.</field>
+    <description>Cowrie: Evento registrado</description>
+  </rule>
+</group>
+```
