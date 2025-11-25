@@ -116,8 +116,8 @@ docker compose up -d
 ```
 
 ### 2.3 Dashboard Access
-* **URL:** https://<SIEM_PUBLIC_IP>
-* **User:** Admin
-* **Password:** SecretPassword
+* **URL:** `https://<SIEM_PUBLIC_IP>`
+* **User:** `Admin`
+* **Password:** `SecretPassword`
 
 ## 🍯 PHASE 3: Honeypot Deployment (Cowrie)
