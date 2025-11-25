@@ -55,17 +55,14 @@ docker compose up -d
 ```
 
 # Step 2: Configure the Honeypot (Cowrie)
-
-### Clone and install Cowrie
-```git clone [http://github.com/cowrie/cowrie](http://github.com/cowrie/cowrie)```
-
-```cd cowrie```
-
-```pip install -r requirements.txt```
-
-### Configure listening port to 2222 in cowrie.cfg
-
-```bin/cowrie start```
+```bash
+# Clone and install Cowrie
+git clone [http://github.com/cowrie/cowrie](http://github.com/cowrie/cowrie)
+cd cowrie
+pip install -r requirements.txt
+# Configure listening port to 2222 in cowrie.cfg
+bin/cowrie start
+```
 
 # Step 3: Install Wazuh Agent & Connect
 Install the Wazuh Agent on the Honeypot VM and configure ossec.conf to read Cowrie's JSON logs. Then, add the custom detection rules to the Wazuh Manager:
