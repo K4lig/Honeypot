@@ -151,3 +151,16 @@ pip install --upgrade -r requirements.txt
 # Install Cowrie in editable mode (Fixes path errors)
 pip install -e .
 ```
+
+### 3.3 Configure Trap Port (2222)
+```bash
+cd etc
+cp cowrie.cfg.dist cowrie.cfg
+nano cowrie.cfg
+```
+* **Find the line:** `listen_endpoints = tcp:22:interface=0.0.0.0`
+* **Change to:** `listen_endpoints = tcp:2222:interface=0.0.0.0`
+Save `(Ctrl+O)` and Exit `(Ctrl+X)`.
+cp cowrie.cfg.dist cowrie.cfg
+nano cowrie.cfg
+``
