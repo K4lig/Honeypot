@@ -121,3 +121,12 @@ docker compose up -d
 * **Password:** `SecretPassword`
 
 ## 🍯 PHASE 3: Honeypot Deployment (Cowrie)
+SSH into `server-honeypot-cowrie.`
+
+### 3.1 Install Dependencies and Create User
+```bash
+sudo apt-get update
+sudo apt-get install -y git python3-venv python3-pip libssl-dev libffi-dev build-essential python3-dev
+sudo adduser --disabled-password cowrie
+# (Press Enter to accept default values)
+```
