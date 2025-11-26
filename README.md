@@ -219,3 +219,33 @@ To visualize alerts, we must teach Wazuh how to interpret Cowrie logs.
 2. Navigate to: Management > Rules > Manage rules files.
 3. Edit the file local_rules.xml.
 4. Paste the following content:
+```xml
+<group name="cowrie,">
+  <rule id="100010" level="3">
+    <decoded_as>json</decoded_as>
+    <field name="eventid">^cowrie\.</field>
+    <description>Cowrie: Event logged</description>
+  </rule>
+
+  <rule id="100011" level="10">
+    <if_sid>100010</if_sid>
+    <field name="eventid">cowrie.session.connect</field>
+    <description>Honeypot: Incoming connection from $(src_ip)</description>
+    <group>mitre_t1098,</group>
+  </rule>
+
+  <rule id="100012" level="12">
+    <if_sid>100010</if_sid>
+    <field name="eventid">cowrie.login.success</field>
+    <description>Honeypot: INTRUDER ALERT! Access granted to user: $(username)</description>
+    <group>authentication_success,pci_dss_10.2.5,</group>
+  </rule>
+
+  <rule id="100013" level="7">
+    <if_sid>100010</if_sid>
+    <field name="eventid">cowrie.command.input</field>
+    <description>Honeypot: Attacker executed command: $(input)</description>
+  </rule>
+</group>
+```
+5. Save and click "Restart Manager".
