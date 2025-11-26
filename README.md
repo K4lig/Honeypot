@@ -38,7 +38,7 @@ This project demonstrates practical skills in **Cloud Security**, **Log Analysis
 
 ### 2. Live Attack Detection
 *Wazuh alert capturing a "Successful Login" event from an external attacker.*
-![Attack Alert Screenshot](Assets/AttackersIP.png)
+![Attack Alert Screenshot](Assets/AttackerIP.png)
 
 ### 3. Captured Commands
 *Log details showing the specific commands the attacker tried to execute.*
