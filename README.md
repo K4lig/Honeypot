@@ -167,3 +167,6 @@ nano cowrie.cfg
 # Ensure you are in ~/cowrie/cowrie
 bin/cowrie start
 ```
+
+## 🔗 PHASE 4: Agent -> SIEM Connection
+On the machine `server-honeypot-cowrie` (exit the `cowrie` user by typing `exit`).
