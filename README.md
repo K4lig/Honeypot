@@ -196,3 +196,26 @@ sudo chmod 640 /home/cowrie/cowrie/var/log/cowrie/cowrie.json
 # Edit agent configuration
 sudo nano /var/ossec/etc/ossec.conf
 ```
+
+Add the following block before the `</ossec_config>` tag:
+```xml
+<localfile>
+  <log_format>json</log_format>
+  <location>/home/cowrie/cowrie/var/log/cowrie/cowrie.json</location>
+</localfile>
+```
+
+### 4.3 Start Agent
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable wazuh-agent
+sudo systemctl start wazuh-agent
+```
+
+## 🛡️ PHASE 5: Detection Engineering (Rules)
+To visualize alerts, we must teach Wazuh how to interpret Cowrie logs.
+
+1. Access the Wazuh Dashboard via web.
+2. Navigate to: Management > Rules > Manage rules files.
+3. Edit the file local_rules.xml.
+4. Paste the following content:
