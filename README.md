@@ -249,3 +249,12 @@ To visualize alerts, we must teach Wazuh how to interpret Cowrie logs.
 </group>
 ```
 5. Save and click "Restart Manager".
+
+## ⚔️ PHASE 6: Proof of Concept (Attack)
+From your personal computer (Attacker):
+```bash
+ssh root@<HONEYPOT_PUBLIC_IP> -p 2222
+```
+1. Enter any password.
+2. Execute commands like `whoami`, `ls`, `curl google.com`.
+3. Verify in the Wazuh Dashboard (Security Events section) that red alerts appear.
