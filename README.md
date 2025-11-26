@@ -42,7 +42,7 @@ This project demonstrates practical skills in **Cloud Security**, **Log Analysis
 
 ### 3. Captured Commands
 *Log details showing the specific commands the attacker tried to execute.*
-![Commands Screenshot]([INSERT_LINK_TO_YOUR_COMMANDS_IMAGE_HERE])
+![Commands Screenshot]([Assets/AttackerCommands.png)
 
 ---
 # 🚀 How to Replicate
